@@ -1,5 +1,4 @@
 * {
-    box-sizing: border-box;
     padding: 0;
     margin: 0;
     text-decoration: none !important;
@@ -42,10 +41,11 @@
 .nav_link {
     margin-bottom: 10px;
     font-family: 'Raleway', sans-serif !important;
+    padding-bottom: 10px;
 }
 
-.item:hover {
-    border-bottom: solid 3px #7b6c63;
+.nav_link:hover {
+    border-bottom: solid 4px #7b6c63;
 
 }
 
@@ -55,7 +55,7 @@
 
 .banner {
     display: flex;
-    background-image: url(/images/banner.png);
+    background-image: url(https://github.com/Jeim05/Front-end-test/blob/main/images/banner.png?raw=true);
     background-color: black;
     height: 500px;
     align-items: center;
@@ -138,6 +138,11 @@
     margin-bottom: 40px;
 }
 
+.article .right-text{
+    text-align: right;
+    padding-right: 80px;
+}
+
 .date {
     color: #7b6c63;
     font-weight: 500;
@@ -152,8 +157,25 @@
     margin: 0 auto;
 }
 
-.paragraph-article{
-    padding-right: 120px;
+.slide-blog .carousel-indicators{
+    margin-left: 10px !important;
+    right: auto !important;
+}
+
+.slide-blog .carousel-indicators button{
+    background-color:  #7b6c63 !important;
+    width: 12px !important;
+    height: 12px !important;
+    border-radius: 100%;
+}
+
+:is(.carousel-control-next-icon, .carousel-control-prev-icon){
+    background-image: none !important;
+    font-size: 40px;
+    text-align: center;
+    color: #7b6c63;
+    width: auto !important;
+    height: auto !important;
 }
 
 .form-contact input {
@@ -223,6 +245,12 @@
 
 @media screen and (max-width:1024px) {
 
+  .menu{
+    position: fixed;
+    width: 100%;
+    z-index: 100;
+  }
+
     .nav_menu {
         display: flex;
         margin-right: 30px !important;
@@ -274,6 +302,7 @@
         flex-direction: column !important;
         position: fixed;
         z-index: 100;
+        padding-bottom: 15px;
     }
 
     .navbar-nav.show {
@@ -293,6 +322,14 @@
     .title-banner{
         width: 80%;
     }
+
+    .img-blog{
+        width: 90%;
+    }
+
+    .article .right-text{
+        padding-right: 33px;
+    }
 }
 
 @media screen and (max-width:800px){
@@ -305,12 +342,53 @@
         flex: 1 0 100% !important; 
     }
 
+    .order-info{
+        order: 1;
+    }
+
+    .img-blog{
+        width: 400px;
+        margin-bottom: 20px;
+    }
+
+    .right-text{
+        text-align: left !important;
+    }
+
+    .article{
+        margin-bottom: 60px;
+    }
+
+    .img-center{
+        text-align: center !important;
+    }
+
+    .footer{
+        text-align: center;
+    }
+
+    .footer-info hr{
+        margin: 0 auto;
+    }
+
+    .footer .post, .feeds, .brand-info, .address{
+        margin-bottom: 30px;
+    }
+
 }
 
 @media screen and (max-width:480px){
 
     .info-banner{
         text-align: center;
+    }
+
+    .img-blog{
+        width: 100%;
+    }
+
+    .form-mobile{
+        width: 100% !important;
     }
     
 }
