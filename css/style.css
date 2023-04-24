@@ -44,19 +44,24 @@
     padding-bottom: 10px;
 }
 
+.nav_link.active {
+    border-bottom: solid 4px #7b6c63;
+}
+
 .nav_link:hover {
     border-bottom: solid 4px #7b6c63;
-
 }
 
 :is(.banner, .services, .blog, .contact) {
-    margin-bottom: 100px;
+    margin-bottom: 120px;
 }
 
 .banner {
     display: flex;
+    background-size: cover;
     background-image: url(https://github.com/Jeim05/Front-end-test/blob/main/images/banner.png?raw=true);
-    background-color: black;
+    background-color: rgba(0, 0, 0, .6) !important;
+    background-blend-mode: soft-light;
     height: 500px;
     align-items: center;
 }
@@ -66,14 +71,13 @@
 }
 
 .subtitle-banner {
-    margin-bottom: 0 !important;
     font-family: 'Raleway', sans-serif;
     font-weight: 500;
 }
 
 .title-banner {
     width: 50%;
-    font-family: 'Raleway', sans-serif;
+    font-weight: 500;
 }
 
 .btn-download {
@@ -81,6 +85,7 @@
     background-color: rgba(255, 255, 255, 0.10196078431372549) !important;
     border-radius: 2px !important;
     padding: 10px 45px !important;
+    margin-top: 20px;
 }
 
 .btn-download:hover {
@@ -99,15 +104,24 @@
     line-height: 30px;
 }
 
+.service{
+    padding: 20px;
+}
+
+.service:hover{
+    box-shadow: -2px 1px 8px 9px rgb(131 114 114 / 70%) !important
+}
+
 .service i {
     color: #7b6c63;
     font-size: 30px;
 }
 
+
 .title-service {
     color: #363636;
     font-size: 20px;
-    margin-top: 20px;
+    margin: 20px auto;
 }
 
 :is(.paragraph-service, .paragraph-article) {
@@ -123,7 +137,7 @@
 }
 
 .blog .title {
-    margin-bottom: 15px;
+    margin-bottom: 30px;
 }
 
 .blog hr {
@@ -138,44 +152,54 @@
     margin-bottom: 40px;
 }
 
-.article .right-text{
+.article .right-text {
     text-align: right;
-    padding-right: 80px;
+    padding: 0 60px;
 }
 
 .date {
     color: #7b6c63;
     font-weight: 500;
+    margin: 0 0 8px;
 }
 
 .title-article {
     font-size: 24px;
 }
 
-.img-blog{
-    width: 75%;
+.img-blog {
+    width: 70%;
     margin: 0 auto;
 }
 
-.slide-blog .carousel-indicators{
+:is(.slide-blog, .img-blog.right) {
+    float: right;
+    margin-right: 50px;
+}
+
+.slide-blog .carousel-indicators {
     margin-left: 10px !important;
     right: auto !important;
 }
 
-.slide-blog .carousel-indicators button{
-    background-color:  #7b6c63 !important;
+.slide-blog .carousel-indicators button {
+    background-color: #7b6c63 !important;
     width: 12px !important;
     height: 12px !important;
     border-radius: 100%;
 }
 
-:is(.carousel-control-next-icon, .carousel-control-prev-icon){
+:is(.carousel-control-next-icon, .carousel-control-prev-icon) {
     background-image: none !important;
     font-size: 40px;
     text-align: center;
     color: #7b6c63;
     width: auto !important;
     height: auto !important;
+}
+
+.form-contact {
+    margin-top: 25px;
 }
 
 .form-contact input {
@@ -192,6 +216,13 @@
 
 .form-contact label {
     color: #5b5b5b;
+    font-weight: 500;
+}
+
+.hr-form {
+    opacity: 0.8 !important;
+    color: #242424;
+    margin: 80px auto 25px;
 }
 
 .btn-submit {
@@ -200,6 +231,12 @@
     padding: 10px 50px !important;
     border-radius: 1px !important;
     font-size: 18px !important;
+    font-weight: 500 !important;
+}
+
+.btn-submit:hover {
+    background-color: #303030 !important;
+    color: #fff !important;
 }
 
 .footer {
@@ -212,6 +249,10 @@
 
 .footer-info .brand-foot {
     margin-bottom: 20px;
+}
+
+.brand-info p {
+    padding-right: 20px;
 }
 
 .footer-info h3 {
@@ -240,16 +281,15 @@
 
 .footer .copyright p {
     color: #595959;
-    font-weight: 300;
 }
 
 @media screen and (max-width:1024px) {
 
-  .menu{
-    position: fixed;
-    width: 100%;
-    z-index: 100;
-  }
+    .menu {
+        position: fixed;
+        width: 100%;
+        z-index: 100;
+    }
 
     .nav_menu {
         display: flex;
@@ -311,84 +351,118 @@
         pointer-events: unset
     }
 
-    .item{
+    .item {
         padding: 20px 10px;
     }
 
-    .col-8-mobile{
+    .col-8-mobile {
         width: 100% !important;
     }
 
-    .title-banner{
+    .banner {
+        position: relative;
+        top: 100px;
+        margin-bottom: 180px;
+    }
+
+    .title-banner {
         width: 80%;
     }
 
-    .img-blog{
+    .img-blog {
         width: 90%;
     }
 
-    .article .right-text{
+    :is(.slide-blog, .img-blog.right){
+        float: none !important;
+        margin: 0 auto !important;
+    }
+
+    .article .right-text {
         padding-right: 33px;
+    }
+
+    .footer .only-mobile{
+        flex: 1 0 100%;
+    }
+
+    
+    .footer {
+        text-align: center;
+    }
+
+    .footer-info hr {
+        margin: 5px auto;
+    }
+
+    :is(.footer .post, .feeds, .brand-info, .address) {
+        margin-bottom: 40px;
     }
 }
 
-@media screen and (max-width:800px){
-    
-    .title-banner{
+@media screen and (max-width:800px) {
+
+    .title-banner {
         width: 100%;
     }
 
-    .only-mobile{
-        flex: 1 0 100% !important; 
+    .only-mobile {
+        flex: 1 0 100% !important;
     }
 
-    .order-info{
+    .only-mobile.service{
+        flex: 1 0 80% !important;
+        margin: auto 15px !important;
+        margin-bottom: 25px !important;
+    }
+
+    .order-info {
         order: 1;
     }
 
-    .img-blog{
-        width: 400px;
-        margin-bottom: 20px;
-    }
-
-    .right-text{
-        text-align: left !important;
-    }
-
-    .article{
+    .blog{
         margin-bottom: 60px;
     }
 
-    .img-center{
+    .img-blog {
+        width: 450px;
+    }
+
+    .right-text {
+        text-align: left !important;
+    }
+
+    .info-article{
+        padding: 20px !important;
+    }
+
+    .article {
+        margin-bottom: 60px;
+    }
+
+    .form-mobile {
+        width: 100% !important;
+    }
+
+    .img-center {
         text-align: center !important;
     }
 
-    .footer{
-        text-align: center;
-    }
-
-    .footer-info hr{
-        margin: 0 auto;
-    }
-
-    .footer .post, .feeds, .brand-info, .address{
-        margin-bottom: 30px;
-    }
 
 }
 
-@media screen and (max-width:480px){
+@media screen and (max-width:480px) {
 
-    .info-banner{
+    .info-banner {
         text-align: center;
     }
 
-    .img-blog{
+    .img-blog {
         width: 100%;
     }
 
-    .form-mobile{
-        width: 100% !important;
+    .article .right-text {
+        padding: 0 12px !important;
     }
-    
+
 }
