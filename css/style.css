@@ -60,10 +60,11 @@
     display: flex;
     background-size: cover;
     background-image: url(https://github.com/Jeim05/Front-end-test/blob/main/images/banner.png?raw=true);
-    background-color: rgba(0, 0, 0, .6) !important;
+    background-color: rgba(0, 0, 0, .8) !important;
     background-blend-mode: soft-light;
     height: 500px;
     align-items: center;
+    background-position: center;
 }
 
 .text-color {
@@ -293,8 +294,7 @@
 
     .nav_menu {
         display: flex;
-        margin-right: 30px !important;
-        margin-top: 30px;
+        margin: 30px 10px 0 0 !important;
         width: 50px;
         height: 50px;
         border: none;
